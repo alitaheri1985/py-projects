@@ -1,13 +1,13 @@
 import time
-
+import getpass
 password = ""
-password1 = input("Enter your New password: ") 
-password2 = input("Confirm your New password: ")
+password1 = getpass.getpass("Enter your New password: ")
+password2 = getpass.getpass("Confirm your New password: ")
 while password1 != password2:
         
     print("it doesn't match. Please try again.")
-    password1 = input("Enter your New password: ")
-    password2 = input("Confirm your New password: ")
+    password1 = getpass.getpass("Enter your New password: ")
+    password2 = getpass.getpass("Confirm your New password: ")
 if password1 == password2:
     password = password1
     print("Your password has been set successfully.")
@@ -18,7 +18,7 @@ if password1 == password2:
     if input() == "test":
         test_password = ""
         while test_password != password:
-            test_password = input("Enter your password to test: ")
+            test_password = getpass.getpass("Enter your password to test: ")
             if test_password == password:
                 print("Password is correct!")
                 print("Thank you for using our program. Goodbye!")
@@ -33,7 +33,7 @@ if password1 == password2:
         else:
             test_password = ""
             while test_password != password:
-                test_password = input("Enter your password to test: ")
+                test_password = getpass.getpass("Enter your password to test: ")
                 if test_password == password:
                     print("Password is correct!")
                     print("Thank you for using our program. Goodbye!")
