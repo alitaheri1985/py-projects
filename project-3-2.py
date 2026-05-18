@@ -35,6 +35,7 @@ while exit == False:
                 print("Invalid input. Please choose rock, paper, or scissors.")
 
             time += 1  
+    print("")
     print("==========================Game over!=============================")
     print("")
     print(f"Player 1 score: {player1_score}")
