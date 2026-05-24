@@ -40,10 +40,23 @@ while exit == False:
     print("")
     print(f"Player 1 score: {player1_score}")
     print(f"Player 2 score: {player2_score}")
-    play_again = input("Do you want to play again? (yes/no): ")
-    if play_again == "no":
-        exit = True
+    score = player1_score - player2_score
+    if score > 0:
+        print("Player 1 is the winner!")
+    elif score < 0:
+        print("Player 2 is the winner!")
     else:
+        print("It's a tie!")
+    play_again = input("Do you want to play again? (yes/no): ")
+    if play_again == "no" or play_again == "n":
+        exit = True
+        print("Thanks for playing!")
+
+    elif play_again == "yes" or play_again == "y":
+
         player1_score = 0
         player2_score = 0
         time = 0
+    else:
+        print("Invalid input. Please choose yes or no.")
+        
