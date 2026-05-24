@@ -43,4 +43,49 @@ print(dic1.get("phone"))  # This will return 'None' since "phone" is not a key i
 print("")
 print("--------------------print a not exist value by square brackets------------------------")
 print("")
-print(dic1[phone])  # This will raise a KeyError since "phone" is not a key in the dictionary
+try:
+    print(dic1["phone"])  # This will raise a KeyError since "phone" is not a key in the dictionary
+except KeyError:
+    print("""'Traceback (most recent call last):
+    File '/home/taheri/wd/project-test/python/py-projects/dictionary-3.py', line 46, in <module>
+    print(dic1['phone'])  # This will raise a KeyError since "phone" is not a key in the dictionary
+          ~~~~^^^^^^^^^
+KeyError: 'phone'
+""")
+print("")
+print("============================= delete a key and its value ===================================")
+
+print("dic1 is: ", dic1)
+new_dic = dic1.pop("email")  # Remove the key "email" and return its value
+print("----------------------------------------------------------------")
+print("Value of the removed key: ", new_dic)  # Print the value of the removed key
+print("----------------------------------------------------------------")
+print("dic1 after removing the key: ", dic1)  # Print the dictionary after removing the key
+print("")
+
+print("============================= delete a key and its value from end ===================================")
+print("dic1 is: ", dic1)
+last_item = dic1.popitem()  # Remove and return the last key-value pair from the dictionary
+print("----------------------------------------------------------------")
+print("Last key-value pair removed: ", last_item)  # Print the last key-value pair that was removed
+print("----------------------------------------------------------------")
+print("dic1 after removing the last key-value pair: ", dic1)  # Print the dictionary after removing the last key-value pair
+print("")
+print("============================= update a dictionary with another dictionary (dic2)===================================")
+print("dic1 is: ", dic1)
+dic2 = {"country": "USA", "email": "alice@usa.com"}
+print("dic2 is: ", dic2)
+dic1.update(dic2)  # Update the original dictionary with key-value pairs from another dictionary
+print("----------------------------------------------------------------")
+print("dic1 after updating with dic2: ", dic1)  # Print the updated dictionary
+print("")
+print("============================= update a dictionary with keyword arguments ===================================")
+dic1 = {"name": "Alice","age": 30}
+print("dic1 is: ", dic1)
+dic1.update(country="USA", email="alice@usa.com")
+print("----------------------------------------------------------------")
+print("dic1 after updating by keyword arguments: ", dic1)
+print("")
+print("-------------Also it can update existing values----------------------------------------------------")
+dic1.update(name="Bob", age=25)
+print("dic1 after updating existing values: ", dic1)
