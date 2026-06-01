@@ -34,3 +34,12 @@ def full_name(firstName, lastName):
     return f"{firstName} {lastName}"
 
 print(f"full name is: {full_name(dic1['name'], dic1['family'])}")
+
+print("=============================================================")
+
+num = int(input("Enter a number: "))
+def check_even_odd(num):
+    if num % 2 == 0:
+        return "Even"
+    return "Odd"
+print(f"The number {num} is {check_even_odd(num)}.")
